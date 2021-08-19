@@ -1,0 +1,47 @@
+.form-field {
+  width: 60%;
+}
+
+/* input outline color */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: gray !important;
+}
+
+/* mat-input focused color */
+::ng-deep
+  .mat-form-field-appearance-outline.mat-focused
+  .mat-form-field-outline-thick {
+  color: #522e92 !important;
+}
+
+input {
+  color: white;
+}
+
+.white-icon,
+mat-label {
+  color: white;
+}
+
+.mat-input-element::placeholder {
+  color: gray;
+}
+
+mat-hint {
+  color: #e91e63;
+  margin-top: 2px;
+  font-size: 14px;
+}
+
+button[type="submit"] {
+  margin-left: 10px;
+  padding: 12px 0 4px 0;
+}
+
+button[type="submit"] mat-icon {
+  padding-bottom: 8px;
+}
+
+button[type="submit"]:disabled {
+  background-color: gray;
+}

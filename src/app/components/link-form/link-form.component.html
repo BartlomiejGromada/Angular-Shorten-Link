@@ -1,0 +1,27 @@
+<div class="container">
+  <form (ngSubmit)="submitForm()" #linkForm="ngForm">
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Link URL</mat-label>
+      <input
+        matInput
+        placeholder="https://www.youtube.com/"
+        class="placeholder"
+        autocomplete="off"
+        [(ngModel)]="longLink.long_url"
+        name="long_url"
+        required
+      />
+      <mat-icon matSuffix class="white-icon">trip_origin</mat-icon>
+      <mat-hint *ngIf="error !== ''">{{ error }}</mat-hint>
+    </mat-form-field>
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      [disabled]="!linkForm.form.valid"
+    >
+      <mat-icon>check</mat-icon>
+    </button>
+  </form>
+</div>
+<app-result-form [shortURL]="shortURL"></app-result-form>
