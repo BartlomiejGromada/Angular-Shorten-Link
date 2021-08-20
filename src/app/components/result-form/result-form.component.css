@@ -1,13 +1,35 @@
-div {
-  margin-top: 50px;
+.container {
+  margin-top: 20px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  width: 60%;
+  padding-top: 10px;
+  min-height: 140px;
 }
 
-span {
+.spanShortLink {
   color: #ffffff;
   font-size: 20px;
 }
 
+.parLinkCopied {
+  margin-top: 20px;
+  color: #ffffff;
+}
+
+.containerShortLink {
+  margin-top: 10px;
+}
+
 button {
   margin-left: 20px;
-  padding: 5px;
+  padding: 15px 5px 0px 15px;
+}
+
+mat-icon {
+  padding: 0 8px 12px 0px;
+}
+
+.containerResult {
+  color: #ffffff;
 }

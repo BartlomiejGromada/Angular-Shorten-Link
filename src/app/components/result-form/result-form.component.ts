@@ -1,4 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input,
+  OnDestroy,
+  ViewChild,
+} from '@angular/core';
+import { ClipboardService } from 'ngx-clipboard';
 import { shortURL } from 'src/app/models/short-url';
 
 @Component({
@@ -6,12 +13,19 @@ import { shortURL } from 'src/app/models/short-url';
   templateUrl: './result-form.component.html',
   styleUrls: ['./result-form.component.css'],
 })
-export class ResultFormComponent implements OnInit {
-  constructor() {}
+export class ResultFormComponent {
+  constructor(private clipboardService: ClipboardService) {}
 
   @Input() shortURL: Partial<shortURL> = {};
+  copied: boolean = false;
 
-  ngOnInit(): void {
-    console.log('XDDDDDDD');
+  copyText(): void {
+    if (this.shortURL.link !== undefined && this.copied !== true) {
+      this.clipboardService.copy(this.shortURL.link);
+      this.copied = true;
+    }
+    setTimeout(() => {
+      this.copied = false;
+    }, 3000);
   }
 }

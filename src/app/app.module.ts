@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { ResultFormComponent } from './components/result-form/result-form.component';
+import { ClipboardModule } from 'ngx-clipboard';
 
 @NgModule({
   declarations: [AppComponent, LinkFormComponent, ResultFormComponent],
@@ -21,6 +22,7 @@ import { ResultFormComponent } from './components/result-form/result-form.compon
     MatIconModule,
     MatButtonModule,
     FormsModule,
+    ClipboardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

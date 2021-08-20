@@ -1,6 +1,12 @@
 <div class="container" *ngIf="shortURL?.link !== undefined">
-  <span>{{ shortURL?.link }}</span>
-  <button mat-raised-button color="primary">
-    <mat-icon>file_copy</mat-icon>
-  </button>
+  <div class="containerShortLink">
+    <span class="spanShortLink">{{ shortURL?.link }}</span>
+    <button mat-raised-button color="primary" (click)="copyText()">
+      <mat-icon>file_copy</mat-icon>
+    </button>
+    <p class="parLinkCopied" *ngIf="copied" class="parLinkCopied">
+      Shorted link copied!
+    </p>
+  </div>
+  <br />
 </div>
