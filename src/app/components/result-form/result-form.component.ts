@@ -6,7 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ClipboardService } from 'ngx-clipboard';
-import { shortURL } from 'src/app/models/short-url';
+import { ShortURL } from 'src/app/models/short-url';
 
 @Component({
   selector: 'app-result-form',
@@ -16,7 +16,7 @@ import { shortURL } from 'src/app/models/short-url';
 export class ResultFormComponent {
   constructor(private clipboardService: ClipboardService) {}
 
-  @Input() shortURL: Partial<shortURL> = {};
+  @Input() shortURL: Partial<ShortURL> = {};
   copied: boolean = false;
 
   copyText(): void {

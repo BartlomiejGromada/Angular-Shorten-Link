@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { longURL } from 'src/app/models/long-url';
-import { shortURL } from 'src/app/models/short-url';
+import { LongURL } from 'src/app/models/long-url';
+import { ShortURL } from 'src/app/models/short-url';
 import { UrlShortenerService } from 'src/app/services/url-shortener.service';
 
 @Component({
@@ -12,8 +12,8 @@ import { UrlShortenerService } from 'src/app/services/url-shortener.service';
 export class LinkFormComponent implements OnDestroy {
   constructor(private urlShortenerService: UrlShortenerService) {}
 
-  shortURL: Partial<shortURL> = {};
-  longLink: Partial<longURL> = {};
+  shortURL: Partial<ShortURL> = {};
+  longLink: Partial<LongURL> = {};
   error: string = '';
   subscription: Subscription = new Subscription();
 
@@ -22,7 +22,7 @@ export class LinkFormComponent implements OnDestroy {
     this.subscription = this.urlShortenerService
       .shortenLink(this.longLink.long_url || '')
       .subscribe(
-        (data: shortURL) =>
+        (data: ShortURL) =>
           (this.shortURL = {
             link: data.link,
             id: data.id,

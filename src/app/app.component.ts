@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { longURL } from './models/long-url';
-import { shortURL } from './models/short-url';
+import { LongURL } from './models/long-url';
+import { ShortURL } from './models/short-url';
 
 @Component({
   selector: 'app-root',

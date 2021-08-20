@@ -1,33 +1,33 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { longURL } from '../models/long-url';
-import { shortURL } from '../models/short-url';
+import { LongURL } from '../models/long-url';
+
 import { throwError } from 'rxjs';
-import { retry, catchError } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
+import { ShortURL } from '../models/short-url';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UrlShortenerService {
-  private readonly API_URL: string = 'https://api-ssl.bitly.com/v4/shorten';
-  private readonly API_KEY: string =
-    'Bearer d4e2c4d329b15e5f486a2d8ee07cd98656906acd';
-
   constructor(private httpClient: HttpClient) {}
 
-  shortenLink(link: string): Observable<shortURL> {
+  private readonly API_URL: string = 'https://api-ssl.bitly.com/v4/shorten';
+
+  shortenLink(link: string): Observable<ShortURL> {
     let header = {
-      Authorization: this.API_KEY,
+      Authorization: environment.API_KEY,
       'Content-Type': 'application/json',
     };
-    let longURL: longURL = {
+    let longURL: LongURL = {
       long_url: link,
       domain: 'bit.ly',
     };
 
     return this.httpClient
-      .post<shortURL>(this.API_URL, longURL, {
+      .post<ShortURL>(this.API_URL, longURL, {
         headers: header,
       })
       .pipe(catchError(this.handleError));

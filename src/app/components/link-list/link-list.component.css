@@ -1,0 +1,35 @@
+div {
+  padding: 10px;
+}
+
+table {
+  background-color: #0e1111;
+  table-layout: fixed !important;
+  width: 100%;
+}
+
+th {
+  color: #ffffff;
+  text-align: center !important;
+  font-size: 16px;
+  background-color: #522e92;
+}
+
+td {
+  color: #ffffff;
+  font-size: 14px !important;
+  word-wrap: break-word !important;
+  text-align: center;
+  padding: 15px !important;
+}
+
+h3 {
+  margin-top: 20px;
+  text-align: center;
+  color: white;
+}
+
+mat-paginator {
+  margin-top: 5px;
+  color: #000000;
+}

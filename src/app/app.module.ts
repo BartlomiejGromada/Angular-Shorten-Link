@@ -11,9 +11,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { ResultFormComponent } from './components/result-form/result-form.component';
 import { ClipboardModule } from 'ngx-clipboard';
+import { LinkListComponent } from './components/link-list/link-list.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
-  declarations: [AppComponent, LinkFormComponent, ResultFormComponent],
+  declarations: [
+    AppComponent,
+    LinkFormComponent,
+    ResultFormComponent,
+    LinkListComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -23,6 +31,8 @@ import { ClipboardModule } from 'ngx-clipboard';
     MatButtonModule,
     FormsModule,
     ClipboardModule,
+    MatTableModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
